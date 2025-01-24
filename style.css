@@ -909,6 +909,7 @@ input[type="submit"]:hover {
   transition: background-color 0.3s ease;
   border-radius: 5px;
   cursor: pointer;
+  color: rgba(69, 83, 111, 1);
 }
 
 .search_filters li::before {
