@@ -692,7 +692,7 @@ input[type="submit"]:hover {
 
 .hashtag li:hover {
   color: white;
-  background-color: rgba(2, 101, 147, 0.7);
+  background-color: rgba(9, 121, 173, 0.7);
   box-shadow: inset 2px 2px 2px rgba(110, 141, 192, 0.03),
     inset -2px -2px 2px rgba(110, 141, 192, 0.03);
   border-radius: 30px;
@@ -909,7 +909,6 @@ input[type="submit"]:hover {
   transition: background-color 0.3s ease;
   border-radius: 5px;
   cursor: pointer;
-  color: rgba(69, 83, 111, 1);
 }
 
 .search_filters li::before {
@@ -940,7 +939,7 @@ input[type="submit"]:hover {
 
 .search_filters a {
   text-decoration: none;
-  font-size: rgba(69, 83, 111, 1);
+  font-size: 15px;
   font-weight: 400;
 }
 
@@ -3792,6 +3791,34 @@ img.star_icon {
 }
 
 .offer_date {
+}
+
+.go-top {
+  position: fixed;
+  bottom: 100px;
+  right: 250px;
+  background-color: rgba(57, 114, 150, 1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  opacity: 1; /* Изначально кнопка невидима */
+  visibility: visible; /* Изначально кнопка скрыта */
+}
+
+.go-top:hover {
+  background-color: rgba(72, 146, 191, 1);
+}
+
+.go-top--show {
+  opacity: 1; /* Делаем кнопку видимой */
+  visibility: visible; /* Сделаем кнопку видимой */
 }
 
 /* SECTION MAP*/
