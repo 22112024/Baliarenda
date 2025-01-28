@@ -10,7 +10,7 @@
   background-color: white;
   color: rgba(69, 83, 111, 1);
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /*WRAPPER*/
@@ -677,7 +677,7 @@ input[type="submit"]:hover {
   justify-content: center;
   padding: 3px;
   margin: 0;
-  height: 18px;
+  height: 25px;
   width: 100px;
   box-shadow: inset 2px 2px 2px rgba(110, 141, 192, 0.03),
     inset -2px -2px 2px rgba(110, 141, 192, 0.03);
@@ -743,7 +743,7 @@ input[type="submit"]:hover {
   align-items: center;
   justify-content: space-between;
   width: 210px;
-  height: 35px;
+  height: 45px;
   padding: 0 7px 0 15px;
   color: rgba(69, 83, 111, 0.5);
   cursor: pointer;
@@ -755,8 +755,8 @@ input[type="submit"]:hover {
 
 .form_button {
   display: flex;
-  width: 33px;
-  height: 33px;
+  width: 45px;
+  height: 45px;
   background-color: rgba(57, 114, 150, 1);
   border-radius: 30px;
   border: none;
