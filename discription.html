@@ -17,7 +17,7 @@
       <header class="header">
         <div class="nav">
           <div class="logo">
-            <a href="#"><img src="img/logo.svg" alt="logo" /></a>
+            <a href="file:///C:/Users/Buksvager/Desktop/HTML/Baliarenda/index.html#"><img src="img/header_image.svg" alt="logo" /></a>
           </div>
           <div class="nav_menu">
             <div class="language_currency" id="languageSwitcher">
@@ -53,7 +53,7 @@
                 <label for="password">Password</label>
                 <span></span>
                 <button type="button" id="togglePassword">
-                  <img src="img/arrow_botton.svg" alt="Show password" id="toggleIcon" />
+                  <img src="img/visiblepasswordr.svg" alt="Show password" id="toggleIcon" />
                 </button>                
               </div>
               <div class="forgot_password">Забыли пароль?</div>
@@ -110,6 +110,20 @@
           </div>
           <div class="third_photo">
             <img src="img/about_image.svg" alt="image" />
+          </div>
+        </div>
+
+        <div class="slider">
+          <div class="slider_container">
+            <button class="slider_close">
+              <i class="far fa-times-circle"></i>
+            </button>
+            <button class="slider_btn slider_btn_left">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider_btn slider_btn_right">
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
         </div>
 
@@ -201,7 +215,23 @@
               </div>
             </div>
             <div class="sidebar_complaint">
-              <a href="#">Сообщить об ошибке</a>
+              <a href="#" id="complaintLink">Сообщить об ошибке</a>
+              <div class="complaint_menu" id="complaintMenu">
+                <div class="close_complaint_button" onclick="closeComplaintMenu()">X</div>
+                <form class="complaint_form" method="post">
+                  <div class="complaint_field_top">
+                    <input type="text" id="email" name="email" required />
+                    <label for="email">Email</label>
+                    <span></span>
+                  </div>
+                  <div class="complaint_field_buttom">
+                    <textarea id="sendComplaint" name="sendComplaint" required></textarea>
+                    <label for="email"></label>
+                    <span></span>
+                  </div>
+                  <input type="submit" value="Отправить">
+                </form>
+              </div>
             </div>
           </div>
         </div>
