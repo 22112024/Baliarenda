@@ -677,7 +677,7 @@ input[type="submit"]:hover {
   justify-content: center;
   padding: 3px;
   margin: 0;
-  height: 25px;
+  height: 30px;
   width: 100px;
   box-shadow: inset 2px 2px 2px rgba(110, 141, 192, 0.03),
     inset -2px -2px 2px rgba(110, 141, 192, 0.03);
@@ -699,7 +699,7 @@ input[type="submit"]:hover {
 }
 
 .about_lead {
-  font-size: 15px;
+  font-size: 16px;
   max-width: 550px;
 }
 
@@ -824,7 +824,7 @@ input[type="submit"]:hover {
   }
 
   .about_lead {
-    font-size: 14px;
+    font-size: 16px;
     max-width: 650px;
     min-width: none;
   }
@@ -845,7 +845,7 @@ input[type="submit"]:hover {
   }
 
   .about_lead {
-    font-size: 14px;
+    font-size: 16px;
     max-width: 590px;
     min-width: none;
   }
@@ -939,7 +939,7 @@ input[type="submit"]:hover {
 
 .search_filters a {
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -986,7 +986,7 @@ input[type="submit"]:hover {
 }
 
 .sub_text {
-  font-size: 12.9px;
+  font-size: 24px;
   color: rgba(69, 83, 111, 1);
   font-weight: 400;
 }
@@ -1081,7 +1081,7 @@ input[type="submit"]:hover {
 
 .dropdown_menu li label {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -1092,8 +1092,8 @@ input[type="submit"]:hover {
 
 /* Стиль для чекбоксов */
 .dropdown_menu li input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   appearance: none;
   border-radius: 5px;
   border: 2px solid rgba(72, 146, 191, 0.7);
@@ -1200,7 +1200,7 @@ input[type="submit"]:hover {
 .rooms .dropdown_menu .input_fields_buttom input[type="number"] {
   width: 110px;
   height: 20px;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   border: none;
   outline: none;
@@ -1224,7 +1224,7 @@ input[type="submit"]:hover {
   left: 3px;
   transform: translateY(-50%);
   pointer-events: none;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.5px;
   transition: 0.3s;
 }
@@ -1234,7 +1234,7 @@ input[type="submit"]:hover {
 .rooms .input_fields_buttom input:focus ~ label,
 .rooms .input_fields_buttom input:valid ~ label {
   top: 5.5px;
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(72, 146, 191, 1);
 }
 
