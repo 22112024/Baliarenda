@@ -13,11 +13,11 @@
     <title>Baliarenda</title>
   </head>
   <body class="body">
-    <div class="wrapper_second_page">
+    <div class="wrapper">
       <header class="header">
         <div class="nav">
           <div class="logo">
-            <a href="file:///C:/Users/Buksvager/Desktop/HTML/Baliarenda/index.html#"><img src="img/header_image.svg" alt="logo" /></a>
+            <a href="#"><img src="img/header_image.svg" alt="logo" /></a>
           </div>
           <div class="nav_menu">
             <div class="language_currency" id="languageSwitcher">
@@ -65,26 +65,22 @@
                 <a href="">Регистрация</a>
               </div>
             </form>
-          </div>
-
+          </div>         
+      
           <div class="menu_container">
             <div class="burger_menu" onclick="toggleMenu()">☰</div>
             <div class="burger_list">
               <div class="language_currency">
                 <div class="language" id="languageSwitcherMenu">
-                  <div class="russian active" onclick="switchLanguage()">
-                    RU
-                  </div>
-                  <div class="english inactive" onclick="switchLanguage()">
-                    EN
-                  </div>
+                  <div class="russian active" onclick="switchLanguage()">RU</div>
+                  <div class="english inactive" onclick="switchLanguage()">EN</div>
                 </div>
-
+      
                 <div class="currency" id="currencySwitcher">
                   <div class="idr active" onclick="switchCurrency()">IDR</div>
                   <div class="usd inactive" onclick="switchCurrency()">USD</div>
                 </div>
-
+      
                 <div class="login">
                   <div class="login_icon">
                     <img src="img/login.svg" alt="Log in" />
@@ -96,226 +92,405 @@
           </div>
         </div>
       </header>
-
-      <main class="page_discription">
-        <div class="section_gallery">
-          <div class="main_photo">
-            <img src="img/about_image.svg" alt="image" />
-          </div>
-          <div class="first_photo">
-            <img src="img/about_image.svg" alt="image" />
-          </div>
-          <div class="second_photo">
-            <img src="img/about_image.svg" alt="image" />
-          </div>
-          <div class="third_photo">
-            <img src="img/about_image.svg" alt="image" />
-          </div>
-        </div>
-
-        <div class="slider">
-          <div class="slider_container">
-            <button class="slider_close">
-              <i class="far fa-times-circle"></i>
-            </button>
-            <button class="slider_btn slider_btn_left">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider_btn slider_btn_right">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="section_sidebar">
-          <div class="sidebar_container">
-            <div class="sidebar_price">
-              <span>17 млн. IDR / месяц</span>
+      
+      <main class="main">
+        <div class="about_seaction">
+            <div class="about_top">
+              <div class="about_title">Baliarenda - бесплатная платформа поиска жилья на Бали</div>
+              <div class="about_hashtag">
+                <div class="hashtag">
+                  <ul>
+                    <li>#бесплатно</li>
+                    <li>#без дублей</li>
+                    <li>#без спама</li>
+                    <li>#без посредников</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="about_lead">
+                <p>Мы размещаем в реальном времени все объявления об аренде вилл, домов, гестхаусов, отелей, квартир и комнат.</p>
+                <p>Мы публикуем только актуальные предложения без дублей и спама.</p>
+                <p>Наша платформа абсолютно бесплатна, как для арендаторов, так и для арендодателей. Мы предоставляем прямые контакты без посредников.</p>
+              </div>
+              <div class="feedback_form">
+                <div class="feedback_email">
+                  <span>t.me/baliarenda_group</span>
+                  <button class="form_button" onclick="openLink('https://t.me/baliarenda_group')">
+                    <img src="img/send.svg" alt="Send">
+                  </button>
+                </div>
+                <div class="feedback_telegram">
+                  <span>t.me/baliarenda</span>
+                  <button class="form_button" onclick="openLink('https://t.me/baliarenda')">
+                    <img src="img/send.svg" alt="Send">
+                  </button>
+                </div>
+              </div>
+                       
             </div>
-            <div class="sidebar_separator_top"></div>
-            <div class="sidebar_district">
+            <div class="about_image">
+              <img src="img/about_image.svg" alt="image" />
+            </div>
+        </div>
+    
+        <div class="search_section">
+          <ul class="search_filters">
+            <li class="district">
               <img
                 src="img/district.svg"
                 alt="District icon"
                 class="search_icon district_icon"
               />
-              <div>
-                <p class="paragraph_district">Район</p>
-                <p class="paragraph_name">Берава</p>
+              <a id="district_input" href="#">
+                Район <br /><span class="sub_text">один или несколько</span>
+              </a>
+              <img src="img/arrow_botton.svg" alt="Arrow" class="arrow_bottom" />
+              <div class="dropdown_menu dropdown_menu_district" id="district_dropdown">
+                <ul class="li_checkbox">
+                  <li><input type="checkbox" id="canggu" /><label for="canggu">Чангу</label></li>
+                  <li><input type="checkbox" id="seminyak" /><label for="seminyak">Семиньяк</label></li>
+                  <li><input type="checkbox" id="ubud" /><label for="ubud">Убуд</label></li>
+                  <li><input type="checkbox" id="kuta" /><label for="kuta">Кута</label></li>
+                  <li><input type="checkbox" id="nusa_dua" /><label for="nusa_dua">Нуса Дуа</label></li>
+                  <li><input type="checkbox" id="sanur" /><label for="sanur">Санур</label></li>
+                  <li><input type="checkbox" id="jimbaran" /><label for="jimbaran">Джимбаран</label></li>
+                  <li><input type="checkbox" id="kerobokan" /><label for="kerobokan">Керобокан</label></li>
+                  <li><input type="checkbox" id="lovina" /><label for="lovina">Ловина</label></li>
+                  <li><input type="checkbox" id="pemuteran" /><label for="pemuteran">Пемутаран</label></li>
+                  <li><input type="checkbox" id="amed" /><label for="amed">Амед</label></li>
+                  <li><input type="checkbox" id="padangbai" /><label for="padangbai">Падангбай</label></li>
+                  <li><input type="checkbox" id="candidasa" /><label for="candidasa">Чандидаса</label></li>
+                  <li><input type="checkbox" id="uluwatu" /><label for="uluwatu">Улувату</label></li>
+                  <li><input type="checkbox" id="mengwi" /><label for="mengwi">Менгви</label></li>
+                  <li><input type="checkbox" id="tegallalang" /><label for="tegallalang">Тегалаланг</label></li>
+                  <li><input type="checkbox" id="bangli" /><label for="bangli">Бангли</label></li>
+                  <li><input type="checkbox" id="tabanan" /><label for="tabanan">Табанан</label></li>
+                  <li><input type="checkbox" id="gilimanuk" /><label for="gilimanuk">Гилиманук</label></li>
+                  <li><input type="checkbox" id="nusa_penida" /><label for="nusa_penida">Нуса Пенида</label></li>
+                  <li><input type="checkbox" id="kintamani" /><label for="kintamani">Кинтамани</label></li>
+                  <li><input type="checkbox" id="seririt" /><label for="seririt">Серирит</label></li>
+                </ul>
+                <button id="saveButton" class="save_button">Сохранить</button>
               </div>
-            </div>
-
-            <div class="sidebar_type">
-              <img
-                src="img/house.svg"
-                alt="Home icon"
-                class="search_icon home_icon"
-              />
-              <div>
-                <p class="paragraph_type">Тип жилья</p>
-                <p class="paragraph_name">Квартира</p>
+            </li>
+            <div class="separator_line"></div>
+            <li class="type">
+              <img src="img/house.svg" alt="Home icon" class="search_icon home_icon" />
+              <a href="#">Тип жилья <br /><span class="sub_text">один или несколько</span></a>
+              <img src="img/arrow_botton.svg" alt="Arrow" class="arrow_bottom" />
+              <div class="dropdown_menu type_dropdown_menu" id="type_dropdown">
+                <ul class="li_checkbox">
+                  <li><input type="checkbox" id="villa" /><label for="villa">Вилла</label></li>
+                  <li><input type="checkbox" id="house" /><label for="house">Дом</label></li>
+                  <li><input type="checkbox" id="apartment" /><label for="apartment">Квартира</label></li>
+                  <li><input type="checkbox" id="room" /><label for="room">Комната</label></li>
+                  <li><input type="checkbox" id="townhouse" /><label for="townhouse">Таунхаус</label></li>
+                  <li><input type="checkbox" id="hotel" /><label for="hotel">Отель</label></li>
+                </ul>
+                <button id="saveButton" class="save_button">Сохранить</button>
               </div>
-            </div>
-            <div class="sidebar_rooms">
-              <img
-                src="img/rooms.svg"
-                alt="Room icon"
-                class="search_icon room_icon"
-              />
-              <div>
-                <p class="paragraph_rooms">Комнаты</p>
-                <p class="paragraph_name">2 комнаты</p>
+            </li>
+            <div class="separator_line"></div>
+            <li class="rooms">
+              <img src="img/rooms.svg" alt="Room icon" class="search_icon room_icon" />
+              <a href="#">Комнаты </br><span class="sub_text">одна или несколько</span></a>
+              <img src="img/arrow_botton.svg" alt="Arrow" class="arrow_bottom" />
+              <div class="dropdown_menu rooms_dropdown_menu" id="rooms_dropdown">
+                <ul class="li_checkbox">
+                  <li class="input_fields_top">
+                    <input type="number" id="rooms_from" data-max-digits="3" name="price" required/>
+                    <label for="price">от</label>
+                  </li>     
+                  <li class="input_fields_buttom">
+                    <input type="number" id="rooms_to" data-max-digits="3" name="price" required/>
+                    <label for="price">до</label>
+                  </li>
+                </ul>
+                <ul class="li_checkbox">
+                  <li class="input_checkbox">
+                    <ul>
+                      <li><button type="button" class="rooms_btn" data-room="1">1</button></li>
+                      <li><button type="button" class="rooms_btn" data-room="2">2</button></li>
+                      <li><button type="button" class="rooms_btn" data-room="3">3</button></li>
+                      <li><button type="button" class="rooms_btn" data-room="4">4</button></li>
+                      <li><button type="button" class="rooms_btn" data-room="5">5</button></li>
+                    </ul>
+                  </li>
+                </ul>
+                <button id="saveButton" class="save_button">Сохранить</button>
               </div>
-            </div>
-            <div class="sidebar_id">
-              <img
-                src="img/house.svg"
-                alt="Home icon"
-                class="search_icon home_icon"
-              />
-              <div>
-                <p class="paragraph_id">ID</p>
-                <p class="paragraph_name">1717177117</p>
-              </div>
-            </div>
-            <div class="sidebar_published">
-              <img
-                src="img/house.svg"
-                alt="Home icon"
-                class="search_icon home_icon"
-              />
-              <div>
-                <p class="paragraph_published">Добавлено</p>
-                <p class="paragraph_name">17.07.2025</p>
-              </div>
-            </div>
-            <div class="sidebar_update">
-              <img
-                src="img/house.svg"
-                alt="Home icon"
-                class="search_icon home_icon"
-              />
-              <div>
-                <p class="paragraph_update">Обновлено</p>
-                <p class="paragraph_name">17.07.2025</p>
-              </div>
-            </div>
-            <div class="sidebar_separator_buttom"></div>
-            <div class="sidebar_link">
-              <div class="feedback_link">
-                <div class="feedback_link_telegram">
-                  <span>Ссылка на публикацию</span>
-                  <button
-                    class="form_button"
-                    onclick="openLink('https://t.me/baliarenda_group')"
-                  >
-                    <img src="img/send.svg" alt="Send" />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="sidebar_complaint">
-              <a href="#" id="complaintLink">Сообщить об ошибке</a>
-              <div class="complaint_menu" id="complaintMenu">
-                <div class="close_complaint_button" onclick="closeComplaintMenu()">X</div>
-                <form class="complaint_form" method="post">
-                  <div class="complaint_field_top">
-                    <input type="text" id="email" name="email" required />
-                    <label for="email">Email</label>
+            </li>
+            <div class="separator_line"></div>
+            <li class="price">
+              <img src="img/price.svg" alt="Price icon" class="search_icon price_icon" />
+              <a href="#">Цена </br><span class="sub_text">от... и до...</span></a>
+              <img src="img/arrow_botton.svg" alt="Arrow" class="arrow_bottom" />
+              <div class="dropdown_menu price_dropdown_menu" id="price_dropdown">
+                <ul class="li_checkbox">
+                  <li class="input_fields">
+                    <input type="number" id="price_from" data-max-digits="9" name="price" required/>
+                    <label for="price">от</label>
                     <span></span>
-                  </div>
-                  <div class="complaint_field_buttom">
-                    <textarea id="sendComplaint" name="sendComplaint" required></textarea>
-                    <label for="email"></label>
+                  </li>
+                  <li class="input_fields">
+                    <input type="number" id="price_to" data-max-digits="9" name="price" required/>
+                    <label for="price">до</label>
                     <span></span>
-                  </div>
-                  <input type="submit" value="Отправить">
-                </form>
+                  </li>
+                </ul>
+                <button id="saveButton" class="save_button">Сохранить</button>
               </div>
-            </div>
+            </li>
+          </ul>
+          <div class="search_buttom">
+            <span class="button_text">Поиск</span>
+            <span class="button_icon">
+              <img src="img/search_icon.svg" alt="Search Icon" class="icon_image">
+            </span>
           </div>
         </div>
-
-        <div class="section_main">
-          <div class="section_discription">
-            <div class="discription_title">Описание объекта</div>
-
-            <div class="discription_text">
-              📍Переренан, 3 спальни Стильная, двухэтажная вилла с видом на
-              джунгли 🌴 🔥Свободна с 10 января 3 спальни, 3 ванные
-              комнаты, Оборудованная кухня, Smart TV, Стиральная машина, Частный
-              бассейн ✅ Включено: Wi-Fi 200 мбит, уборка 2 раза в нед.,
-              обслуживание бассейна, территории 1 раз в нед. 💰Цена: 55
-              млн./мес. (3400$) 📹 Видео в лс Для бронирования виллы и по любым
-              вопросам писать: @helene_bali #3br #pererenan #41
+        
+        <div class="card_section">
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background.svg" alt="Card background" />
             </div>
-            <div class="discription_hashtag">
-              <ul>
-                <li>#джунгли</li>
-                <li>#бассейн</li>
-                <li>#уборка</li>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" id="starIcon1" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
               </ul>
-            </div>
-
-            <div class="discription_info">
-              <div class="discription_content">
-                <div class="main_avatar">
-                  <img src="img/main_offer.jpg" alt="Contact" />
-                </div>
-                <div class="main_text">
-                  <div class="main_name">Alina Swiss</div>
-                  <div class="main_nic">@alina_swiss</div>
-                </div>
-                <div class="main_button">
-                  <span class="main_button_text">Связаться</span>
-                  <span class="main_button_icon">
-                    <img
-                      src="img/search_icon.svg"
-                      alt="Connect Icon"
-                      class="icon_image"
-                    />
-                  </span>
-                </div>
-              </div>
-              <div class="discription_separator_bottom"></div>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
             </div>
           </div>
-
-          <div class="discription_offer">
-            <div class="offer_title">Альтернативные предложения</div>
-            <div class="offer_text">
-              <div class="offer_first">
-                <div class="offer_avatar">
-                  <img src="img/main_offer.jpg" alt="Contact" />
-                </div>
-                <div class="offer_info">
-                  <div class="offer_name">Alina Swiss</div>
-                  <div class="offer_date">17.01.2025</div>
-                </div>
-              </div>
-              <div class="offer_second">
-                <div class="offer_avatar">
-                  <img src="img/main_offer.jpg" alt="Contact" />
-                </div>
-                <div class="offer_info">
-                  <div class="offer_name">Alina Swiss</div>
-                  <div class="offer_date">17.01.2025</div>
-                </div>
-              </div>
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background2.svg" alt="Card background" />
+            </div>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
+              </ul>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
             </div>
           </div>
-        </div>
-
-        <div class="section_map">
-          <div class="map_container">
-            <img src="img/about_image.svg" alt="Map" />
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background3.svg" alt="Card background" />
+            </div>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
+              </ul>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background4.svg" alt="Card background" />
+            </div>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
+              </ul>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background5.svg" alt="Card background" />
+            </div>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
+              </ul>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background3.svg" alt="Card background" />
+            </div>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
+              </ul>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background.svg" alt="Card background" />
+            </div>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
+              </ul>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background2.svg" alt="Card background" />
+            </div>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
+              </ul>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card_background">
+              <img src="img/card_background3.svg" alt="Card background" />
+            </div>
+            <div class="image_card">
+              <img src="img/card_image.svg" alt="Photo" class="card_image_svg" />
+              <img src="img/Star.svg" alt="Star icon" class="star_icon" />
+            </div>
+            <div class="body_card">
+              <ul class="text_card">
+                <li>
+                  <img src="img/districtsvg.svg" alt="District icon" class="card_icon" />Чангу, Берава
+                </li>
+                <li>
+                  <img src="img/housesvg.svg" alt="Home icon" class="card_icon" />Квартира
+                </li>
+                <li>
+                  <img src="img/pricesvg.svg" alt="Price icon" class="card_icon" />11M IRD/мес.
+                </li>
+                <li>
+                  <img src="img/roomssvg.svg" alt="Room icon" class="card_icon" />2 комнаты
+                </li>
+              </ul>
+              <div class="card_buttom" onclick="window.location.href='discription.html';">Подробнее</div>
+            </div>
           </div>
         </div>
       </main>
-
+      <div class="buttom_down">Ещё</div>
       <footer class="footer">
         <ul class="footer_list">
-          <li>© Baloving – All rights reserved</li>
+          <li>© Baliarenda – All rights reserved</li>
           <li>
             <img
               src="img/support.svg"
@@ -324,25 +499,16 @@
             />support@baloving.com
           </li>
           <li>
-            <img
-              src="img/terms.svg"
-              alt="Terms and conditions"
-              class="footer_terms"
-            />Terms and Conditions
+            <img src="img/terms.svg" alt="Terms and conditions" class="footer_terms" />Terms
+            and Conditions
           </li>
           <li>
-            <img
-              src="img/privacy.svg"
-              alt="Privacy Policy"
-              class="footer_policy"
-            />Privacy Policy
+            <img src="img/privacy.svg" alt="Privacy Policy" class="footer_policy" />Privacy
+            Policy
           </li>
         </ul>
       </footer>
     </div>
-
-    <button class="go-top">↑</button>
-
-    <script src="script.js"></script>
+    <script src="script.js"></script>    
   </body>
 </html>
