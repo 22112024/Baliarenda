@@ -284,15 +284,94 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.history.pushState(null, "", window.location.href);
 
-/*
+// Функция для ограничения количества цифр
+function limitDigits(input) {
+  const maxDigits = parseInt(input.getAttribute("data-max-digits")); // Получаем максимальное количество цифр
+  if (input.value.length > maxDigits) {
+    input.value = input.value.slice(0, maxDigits); // Обрезаем лишние цифры
+  }
+}
+
+// Назначаем обработчики событий для всех полей с атрибутом data-max-digits
+document
+  .querySelectorAll('input[type="number"][data-max-digits]')
+  .forEach((input) => {
+    input.addEventListener("input", () => limitDigits(input));
+  });
+
+const cards = Array.from(document.querySelectorAll(".section_gallery > div"));
+const slider = document.querySelector(".slider");
+const sliderContainer = document.querySelector(".slider_container");
+const sliderBtnLeft = document.querySelector(".slider_btn_left");
+const sliderBtnRight = document.querySelector(".slider_btn_right");
+const sliderClose = document.querySelector(".slider_close");
+
+let cardIndex = -1;
+let pictureFull;
+
+for (const card of cards) {
+  card.addEventListener("click", (event) => {
+    event.preventDefault();
+    const img = event.target.closest("img"); // Получаем картинку из клика
+    if (img) {
+      cardIndex = cards.findIndex((c) => c.contains(img)); // Находим индекс карточки
+      pictureFull = img.cloneNode();
+      pictureFull.style.objectFit = "contain";
+      sliderContainer.append(pictureFull);
+      slider.classList.add("active");
+    }
+  });
+}
+
+sliderBtnLeft.addEventListener("click", (event) => {
+  event.preventDefault();
+  changePicture("left");
+});
+
+sliderBtnRight.addEventListener("click", (event) => {
+  event.preventDefault();
+  changePicture("right");
+});
+
+function changePicture(dir) {
+  if (dir === "left") {
+    if (cardIndex > 0) {
+      cardIndex--;
+    } else {
+      cardIndex = cards.length - 1;
+    }
+  } else if (dir === "right") {
+    if (cardIndex < cards.length - 1) {
+      cardIndex++;
+    } else {
+      cardIndex = 0;
+    }
+  }
+  const img = cards[cardIndex].querySelector("img");
+  let newPictureFull = img.cloneNode();
+  newPictureFull.style.objectFit = "contain";
+  pictureFull.replaceWith(newPictureFull);
+  pictureFull = newPictureFull;
+}
+
+sliderClose.addEventListener("click", (event) => {
+  event.preventDefault();
+  slider.classList.remove("active");
+  pictureFull.remove();
+});
+
 const goTopBtn = document.querySelector(".go-top");
 
+// ПРОКРУТКА КНОПКИ
 window.addEventListener("scroll", trackScroll);
+
+// Добавляем обработчик клика на кнопку
 goTopBtn.addEventListener("click", goTop);
 
+// Функция для отслеживания прокрутки
 function trackScroll() {
   const scrolled = window.scrollY; // Получаем текущую прокрутку
-  const coords = document.documentElement.clientHeight;
+  const coords = document.documentElement.clientHeight; // Высота видимой области окна
 
   // Если прокрутили вниз больше, чем на высоту окна
   if (scrolled > coords) {
@@ -302,12 +381,56 @@ function trackScroll() {
   }
 }
 
+// Функция для плавной прокрутки вверх
 function goTop() {
   if (window.scrollY > 0) {
-    // Если не на самом верху
-    window.scrollBy(0, -75); // Прокручиваем страницу вверх
-    setTimeout(goTop, 0); // Рекурсивно продолжаем прокрутку
+    // Используем requestAnimationFrame для плавной прокрутки
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Плавная прокрутка
+    });
   }
 }
 
-*/
+// ОТПРАВКА ЖАЛОБЫ
+document.addEventListener("DOMContentLoaded", function () {
+  const complaintLink = document.getElementById("complaintLink");
+  const complaintMenu = document.getElementById("complaintMenu");
+
+  // Функция для открытия окна
+  function openComplaintMenu() {
+    complaintMenu.classList.add("active");
+  }
+
+  // Функция для закрытия окна
+  function closeComplaintMenu() {
+    complaintMenu.classList.remove("active");
+  }
+
+  // Открытие окна при клике на ссылку
+  complaintLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    openComplaintMenu();
+  });
+
+  // Закрытие окна при клике на кнопку закрытия
+  const closeComplaintButton = document.querySelector(
+    ".close_complaint_button"
+  );
+  closeComplaintButton.addEventListener("click", closeComplaintMenu);
+
+  // Закрытие окна при клике вне поля жалобы
+  document.addEventListener("click", function (e) {
+    if (
+      !complaintMenu.contains(e.target) &&
+      !complaintLink.contains(e.target)
+    ) {
+      closeComplaintMenu();
+    }
+  });
+
+  // Предотвращаем закрытие при клике на само окно
+  complaintMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+});
