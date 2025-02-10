@@ -2648,7 +2648,7 @@ input[type="submit"]:hover {
 
   .rooms_dropdown_menu {
     top: 45px;
-    left: -4%;
+    left: -3.5%;
   }
 
   .price_dropdown_menu {
@@ -2713,12 +2713,12 @@ input[type="submit"]:hover {
 
   .rooms_dropdown_menu {
     top: 45px;
-    left: -3.5%;
+    left: -4%;
   }
 
   .price_dropdown_menu {
     top: 45px;
-    left: -1%;
+    left: -0.5%;
   }
 
   .separator_line {
@@ -4353,7 +4353,7 @@ img.star_icon {
   gap: 2px;
 }
 
-.sidebar_id p {
+.paragraph_name {
   text-decoration: none;
 }
 
