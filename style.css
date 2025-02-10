@@ -963,7 +963,7 @@ input[type="submit"]:hover {
     height: 90%;
     border-radius: 0;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   .about_image img {
@@ -997,13 +997,21 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 510px) {
+  .about_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(52, 61, 76, 1);
+    margin: 0 15px 0 25px;
+  }
+
   .about_title {
     font-size: 20px;
   }
 
   .about_lead_mobile {
     display: inline;
-    font-size: 16px;
+    font-size: 15.5px;
   }
 
   .about_hashtag {
@@ -1015,6 +1023,20 @@ input[type="submit"]:hover {
 
   .hashtag li:nth-child(2) {
     display: none;
+  }
+}
+
+@media (max-width: 410px) {
+  .about_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(52, 61, 76, 1);
+    margin: 0 10px 0 20px;
+  }
+
+  .about_title {
+    font-size: 18px;
   }
 }
 
@@ -2462,7 +2484,7 @@ input[type="submit"]:hover {
     width: 100%;
     min-width: 300px;
     height: 100%;
-    padding: 0 0 0 7px;
+    padding: 0 0 0 13px;
     margin: 0;
     transition: background-color 0.3s ease;
     border-radius: 5px;
@@ -2541,7 +2563,7 @@ input[type="submit"]:hover {
     padding: 0;
     margin: 0;
     border: 1px solid rgba(69, 83, 111, 0.1);
-    width: 93%;
+    width: 98%;
   }
 
   .sub_text {
@@ -2579,12 +2601,12 @@ input[type="submit"]:hover {
 
   .district .dropdown_menu {
     top: 45px;
-    left: -0.5%;
+    left: -1%;
   }
 
   .type_dropdown_menu {
     top: 45px;
-    left: -0.5%;
+    left: -1%;
   }
 
   .rooms_dropdown_menu {
@@ -2594,7 +2616,55 @@ input[type="submit"]:hover {
 
   .price_dropdown_menu {
     top: 45px;
+    left: 1.9%;
+  }
+}
+
+@media (max-width: 430px) {
+  .search_filters > li {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 280px;
+    height: 100%;
+    padding: 0 0 0 12px;
+    margin: 0;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .district .dropdown_menu {
+    top: 45px;
+    left: -3.5%;
+  }
+
+  .type_dropdown_menu {
+    top: 45px;
     left: -1%;
+  }
+
+  .rooms_dropdown_menu {
+    top: 45px;
+    left: -3.5%;
+  }
+
+  .price_dropdown_menu {
+    top: 45px;
+    left: -1%;
+  }
+
+  .separator_line {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(69, 83, 111, 0.1);
+    width: 98%;
   }
 }
 
@@ -2614,24 +2684,89 @@ input[type="submit"]:hover {
     cursor: pointer;
   }
 
+  .search_filters > li::before {
+    content: "";
+    position: absolute;
+    transform: translate(-5%, 0%);
+    border-radius: 10px;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+  }
+
+  .search_filters > li:hover::before {
+    background-color: rgba(223, 242, 254, 0.21);
+    width: 100%;
+    height: 55px;
+    box-shadow: 1px 1px 1px rgba(110, 141, 192, 0.1),
+      -1px -1px 1px rgba(110, 141, 192, 0.1);
+  }
+
   .district .dropdown_menu {
     top: 45px;
-    left: -3%;
+    left: -3.5%;
   }
 
   .type_dropdown_menu {
     top: 45px;
-    left: 0%;
+    left: -1%;
   }
 
   .rooms_dropdown_menu {
     top: 45px;
-    left: -5%;
+    left: -3.5%;
   }
 
   .price_dropdown_menu {
     top: 45px;
-    left: -3%;
+    left: -1%;
+  }
+
+  .separator_line {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(69, 83, 111, 0.1);
+    width: 98%;
+  }
+}
+
+@media (max-width: 380px) {
+  .search_filters > li {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 280px;
+    height: 100%;
+    padding: 0 0 0 12px;
+    margin: 0;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .district .dropdown_menu {
+    top: 45px;
+    left: -3.5%;
+  }
+
+  .type_dropdown_menu {
+    top: 45px;
+    left: -0.5%;
+  }
+
+  .rooms_dropdown_menu {
+    top: 45px;
+    left: -3.5%;
+  }
+
+  .price_dropdown_menu {
+    top: 45px;
+    left: -1%;
   }
 
   .separator_line {
