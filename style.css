@@ -996,7 +996,7 @@ input[type="submit"]:hover {
   }
 }
 
-@media (max-width: 590px) {
+@media (max-width: 510px) {
   .about_hashtag {
     display: flex;
     align-items: center;
@@ -2449,7 +2449,7 @@ input[type="submit"]:hover {
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     min-width: 300px;
     height: 100%;
@@ -2474,6 +2474,7 @@ input[type="submit"]:hover {
 
   .search_filters > li:last-child {
     justify-content: start;
+    margin: 0;
   }
 
   .search_filters > li img.arrow_bottom {
@@ -3166,7 +3167,7 @@ img.star_icon {
   .body_card ul {
     display: grid;
     position: absolute;
-    top: 60%;
+    top: 58%;
     grid-template-columns: 1fr 1fr;
     grid-gap: 17px 5px;
     padding: 0;
@@ -3195,7 +3196,7 @@ img.star_icon {
   .body_card ul {
     display: grid;
     position: absolute;
-    top: 60%;
+    top: 57%;
     grid-template-columns: 1fr 1fr;
     grid-gap: 17px 5px;
     padding: 0;
@@ -3214,11 +3215,11 @@ img.star_icon {
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 380px) {
   .body_card ul {
     display: grid;
     position: absolute;
-    top: 59%;
+    top: 55.9%;
     grid-template-columns: 1fr 1fr;
     grid-gap: 17px 5px;
     padding: 0;
@@ -4500,6 +4501,25 @@ img.star_icon {
 
 .feedback_link_telegram img {
   padding: 0;
+}
+
+@media (max-width: 710px) {
+  .close_complaint_button {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 105%;
+    right: 37%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2),
+      -1px -1px 2px rgba(255, 255, 255, 0.5);
+  }
 }
 
 /*GO-TOP*/
