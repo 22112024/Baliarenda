@@ -997,6 +997,15 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 510px) {
+  .about_title {
+    font-size: 20px;
+  }
+
+  .about_lead_mobile {
+    display: inline;
+    font-size: 16px;
+  }
+
   .about_hashtag {
     display: flex;
     align-items: center;
@@ -2598,7 +2607,7 @@ input[type="submit"]:hover {
     width: 100%;
     min-width: 280px;
     height: 100%;
-    padding: 0 0 0 7px;
+    padding: 0 0 0 12px;
     margin: 0;
     transition: background-color 0.3s ease;
     border-radius: 5px;
@@ -2623,6 +2632,17 @@ input[type="submit"]:hover {
   .price_dropdown_menu {
     top: 45px;
     left: -3%;
+  }
+
+  .separator_line {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(69, 83, 111, 0.1);
+    width: 98%;
   }
 }
 
@@ -4196,6 +4216,10 @@ img.star_icon {
   display: flex;
   flex-direction: column;
   gap: 2px;
+}
+
+.sidebar_id p {
+  text-decoration: none;
 }
 
 .paragraph_id {
